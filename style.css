@@ -168,6 +168,15 @@ html {
   position: relative;
   perspective: 100rem;
 }
+.trips-header {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  background: linear-gradient(rgba(18, 113, 255, 0.5), rgba(18, 113, 255, 0.3)),
+    url(images/trips-bg.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+  perspective: 100rem;
+}
 
 .header-text {
   text-align: center;
@@ -302,6 +311,7 @@ html {
 .cards-wrapper {
   display: flex;
   justify-content: space-evenly;
+  margin:40px;
 }
 
 .card {
@@ -584,6 +594,110 @@ html {
 
 /* About Page*/
 
+.about {
+  padding: 10rem 0;
+  position: relative;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-bg {
+  background-color: #f8f9fa; /* Kolor tła dla sekcji */
+  padding: 40px; /* Wewnętrzny margines dla sekcji */
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.about-text {
+  display: flex;
+  flex-wrap: wrap; /* Flexbox - elementy w sekcji zawijają się, gdy nie ma wystarczającej przestrzeni */
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.text-wrapper {
+
+
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+  /* background-color: red; */
+  margin:20px;
+
+}
+
+.about-heading {
+  font-size: 28px; /* Rozmiar nagłówka */
+  color: #333; /* Kolor tekstu */
+  margin-bottom: 20px; /* Margines od dolnej krawędzi nagłówka */
+}
+
+
+
+.about-btn {
+  padding: 10px 20px; /* Wielkość przycisku */
+  font-size: 16px; /* Rozmiar tekstu przycisku */
+  background-color: #007bff; /* Kolor tła przycisku */
+  color: #fff; /* Kolor tekstu przycisku */
+  border: none; /* Brak obramowania */
+  border-radius: 4px; /* Promień zaokrąglenia */
+  cursor: pointer; /* Zmiana kursora na wskaźnik */
+}
+
+.about-btn:hover {
+  background-color: #0056b3; /* Kolor tła przycisku po najechaniu */
+}
+.text-about-img {
+  flex: 1; /* Element flex rozciąga się, aby wypełnić dostępną przestrzeń */
+  max-width: 300px; /* Maksymalna szerokość obrazka */
+  height: auto; /* Automatyczna wysokość obrazka */
+  border-radius: 50%; /* Promień zaokrąglenia obrazka */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla efektu głębi */
+  z-index: 1;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .text-wrapper {
+    margin-right: 0; /* Usunięcie marginesu od prawej strony na mniejszych ekranach */
+    margin-bottom: 20px; /* Dodanie marginesu od dolnej krawędzi między tekstem a obrazkiem */
+  }
+
+  .text-about-img {
+    order: -1; /* Zamiana kolejności obrazka na początek na mniejszych ekranach */
+    margin-bottom: 20px; /* Margines od dolnej krawędzi obrazka na mniejszych ekranach */
+    display: none;
+  }
+}
+
+
+.about-paragraph::first-letter {
+  margin-left: 1rem;
+}
+/* About Page */
+
 .about-header {
   width: 100%;
   height: calc(100vh - 7rem);
@@ -594,7 +708,206 @@ html {
   perspective: 100rem;
 }
 
-/* END About Page*/
+.about-content {
+  text-align: center;
+  padding: 10rem 5rem;
+}
+
+.section-heading {
+  font-size: 6rem;
+  color: var(--white-color);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.about-paragraph {
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+
+.about-btn {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #2f80ed;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.about-btn:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.about-btn:hover:after {
+  opacity: .5;
+}
+
+.about-btn:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.about-btn:active:after {
+  opacity: 1;
+}
+
+.gallery {
+  display: flex;
+  -ms-flex-align: center;
+  justify-content: center;
+}
+.album .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; /* Skrócona forma zapisu dla marginesu: górnego, prawego, dolnego, lewego */
+  justify-content: center; /* Zmiana wartości właściwości justify-content */
+}
+
+
+.album .responsive-container-block.bg {
+  max-width: 1320px;
+  margin: 0 0 0 0;
+  justify-content: space-between;
+}
+
+.album .img {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.album #i9rb {
+  color: black;
+}
+
+.album #ir6i {
+  color: black;
+}
+
+.album #ikz3b {
+  color: black;
+}
+
+.album .responsive-container-block.img-cont {
+  flex-direction: column;
+  max-width: 33.3%;
+  min-height: auto;
+  margin: 0 0 0 0;
+  height: 100%;
+}
+
+.album #ipix {
+  color: black;
+}
+
+.album #ipzoh {
+  color: black;
+}
+
+.album #ig5q8 {
+  color: black;
+}
+
+.album #imtzl {
+  color: black;
+}
+
+.album #i53es {
+  color: black;
+}
+
+.album .img.img-big {
+  height: 50%;
+  margin: 0 0 16px 0;
+}
+
+@media (max-width: 1024px) {
+  .album .img {
+    margin: 0 0 18px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .album .img {
+    max-width: 32.5%;
+    margin: 0 0 0 0;
+  }
+
+  .album .responsive-container-block.bg {
+    flex-direction: column;
+  }
+
+  .album .responsive-container-block.img-cont {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .album .img.img-big {
+    max-width: 49%;
+    margin: 0 0 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .album .img {
+    max-width: 94%;
+    margin: 0 0 25px 0;
+  }
+
+  .album .responsive-container-block.img-cont {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .album .img.img-big {
+    max-width: 94%;
+    margin: 0 0 25px 0;
+  }
+
+  .album .img.img-last {
+    margin: 0 0 5px 0;
+  }
+}
+/* END About Page */
+
 
 
 @keyframes contact-bg {
@@ -618,8 +931,9 @@ html {
 
 /* Footer */
 .footer {
-  background-color: var(--grey-color);
+  background-color: black;
   padding: 4rem 0 2rem 0;
+  min-height: 300px;
 }
 
 .footer-list {
@@ -650,7 +964,12 @@ html {
   margin-top: 5rem;
 }
 .footer-paragraph a {
-  color: #E9DF00;
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-size: 1.4em;
+}
+.footer-paragraph a:hover {
+color: red;
 }
 /* End of Footer */
 
@@ -672,6 +991,9 @@ html {
 @media (max-width: 1000px) {
   .nav-list {
     flex-direction: column;
+  }
+  .text-about-img {
+    display: none;
   }
 
   .nav-link {
@@ -740,7 +1062,12 @@ html {
     margin: 1rem 0;
   }
 }
-
+@media (min-width: 768px) {
+  .about-btn {
+    padding: 14px 22px;
+    width: 176px;
+  }
+}
 @media (max-width: 650px) {
   .container {
     margin: 0;
